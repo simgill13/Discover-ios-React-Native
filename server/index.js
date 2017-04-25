@@ -50,66 +50,7 @@ app.post('/api/user', (req, res) => {
 });
 
 
-passport.use(
-    new GoogleStrategy({
-        clientID:  '',
-        clientSecret: '',
-        callbackURL: `/api/auth/google/callback`
-    },
-    (accessToken, refreshToken, profile, cb) => {
-        User
-        .findOne({googleId: profile.id})
-        .exec()
-        .then(data => {
-            if (data == null){
-                User
-                .create({
-                    displayName: profile.displayName,
-                    googlePic: profile.photos[0].value,
-                    googleId: profile.id,
-                    accessToken: accessToken
-                })
-                .then(newPost =>{
-                   
-                    return cb(null, newPost);
-                })
-            }
-            else {
-                    User
-                    .findOneAndUpdate(
-                    {googleId: profile.id},
-                    {$set: {accessToken: accessToken}},
-                    {safe: true, new:true},
-                    function(err, user) {
-                        if(err){
-                    }
-                    return cb(null, user);
-                }
-            )          
-            }  
-        }) 
-    }
-));
 
-app.get('/api/auth/google',
-    passport.authenticate('google', {
-        scope: ['profile']
-    })
-    
-);
-
-app.get('/api/auth/google/callback',
-    passport.authenticate('google', {
-        failureRedirect: '/',
-        session: false
-    }),
-    (req, res) => {
-      console.log('made it to server')
-        // res.cookie('accessToken', req.user.accessToken, {expires: 0});
-        // res.cookie('displayName', req.user.displayName, {expires: 0});
-        // res.redirect('/');
-    }
-);
 
 
 

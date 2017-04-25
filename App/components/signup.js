@@ -29,6 +29,11 @@ export default class SignUp extends Component{
 
   constructor(props){
     super(props)
+    this.state = {
+      name: '',
+      email:'',
+      password:'',
+    };
     this.formSubmit=this.formSubmit.bind(this)
   }
 
@@ -43,7 +48,9 @@ export default class SignUp extends Component{
   formSubmit(e){
     console.log('hello world')
 
-    console.log(e.target.name.value)
+    console.log(this.state.name)
+    console.log(this.state.email)
+    console.log(this.state.password)
    
   }
    
@@ -80,18 +87,18 @@ export default class SignUp extends Component{
                         <Form>
                             <Item floatingLabel>
                                 <Label>Name</Label>
-                                <Input />
+                                <Input onChangeText={(name) => this.setState({name})} />
                             </Item>
                             <Item floatingLabel>
                                 <Label>Email</Label>
-                                <Input name="email" />
+                                <Input onChangeText={(email) => this.setState({email})} />
                             </Item>
                             <Item  floatingLabel last>
                                 <Label>Password</Label>
-                                <Input />
+                                <Input onChangeText={(password) => this.setState({password})} />
                             </Item>
-                            <Button onPress={(e) => {this.formSubmit(e)}}>
-                              <Text>Sign me up </Text>
+                            <Button onPress={(c) => {this.formSubmit(c)}} >
+                              <Text>Sign me up </Text> 
                             </Button>
                         </Form>
                     
@@ -101,3 +108,8 @@ export default class SignUp extends Component{
     );
   }
 }
+
+
+
+
+
