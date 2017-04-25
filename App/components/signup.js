@@ -47,10 +47,12 @@ export default class SignUp extends Component{
   
   formSubmit(e){
     console.log('hello world')
-
-    console.log(this.state.name)
-    console.log(this.state.email)
-    console.log(this.state.password)
+    let name = this.state.name;
+    let email = this.state.email;
+    let password = this.state.password;
+    console.log(name)
+    console.log(email)
+    console.log(password)
    
   }
    
