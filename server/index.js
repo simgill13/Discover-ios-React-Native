@@ -52,8 +52,8 @@ app.post('/api/user', (req, res) => {
 
 passport.use(
     new GoogleStrategy({
-        clientID:  '718326753852-vd914mpritcinsa68jhv7suhidn1of6k.apps.googleusercontent.com',
-        clientSecret: 'ZNh14uxUPuKh71QX0vOVDZfk',
+        clientID:  '',
+        clientSecret: '',
         callbackURL: `/api/auth/google/callback`
     },
     (accessToken, refreshToken, profile, cb) => {

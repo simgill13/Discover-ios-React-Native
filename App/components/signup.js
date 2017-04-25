@@ -45,7 +45,6 @@ export default class SignUp extends Component{
 
     console.log(e.target.name.value)
    
-
   }
    
     
