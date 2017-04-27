@@ -27,11 +27,23 @@ app.get('/api/user', (req, res) => {
 )}
 );
 
+
+
+
+app.get('/api/user/:email', (req, res) => {
+  User
+  .findOne({email: req.params.email})
+  .exec()
+  .then(data => res.json(data))
+  .catch(console.error)
+}
+);
+
 app.post('/api/user', (req, res) => {
   console.log(req.body);
   User
   .create({
-    Name: req.body.Name,
+    Name: req.body.name,
     firstName: req.body.firstName,
     email: req.body.email,
     password: req.body.password,

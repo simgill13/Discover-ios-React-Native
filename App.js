@@ -8,6 +8,8 @@ import App from './App/components/app';
 import First from './App/components/first';
 import Login from './App/components/login';
 import SignUp from './App/components/signup';
+import LoggedInApp from './App/components/loggedInapp';
+import Search from './App/components/search';
 
 
 export default class iosAppProject extends Component{
@@ -22,6 +24,10 @@ export default class iosAppProject extends Component{
         return(<Login navigator={navigator} title="login"/>)
       case 'signup':
         return(<SignUp navigator={navigator} title="signup"/>)
+      case 'loggedinapp':
+        return(<LoggedInApp navigator={navigator} title="loggedinapp"/>)
+      case 'search':
+        return(<Search navigator={navigator} title="search"/>)
     }
   }
   render(){

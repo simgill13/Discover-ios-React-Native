@@ -63,24 +63,6 @@ export default class App extends Component{
 
 
 
- // <Footer >
- //                    <FooterTab>
- //                        <Button onPress={() => {this.onPress()}}>
- //                            <Text>Search</Text>
- //                        </Button>
- //                        <Button>
- //                            <Text>Carrers</Text>
- //                        </Button>
- //                        <Button active>
- //                            <Text>Account</Text>
- //                        </Button>
- //                        <Button >
- //                            <Text>More</Text>
- //                        </Button>
- //                    </FooterTab>
- //  </Footer>
-
-
 const styles = StyleSheet.create({
  MainContainer:{
  	flex:1

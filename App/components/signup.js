@@ -1,31 +1,15 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {StyleSheet,Navigator} from 'react-native';
-import { Container,
-    Header,
-    Content, 
-    Left, 
-    Right,
-    Button,
-    Icon,
-    Body,
-    Title,
-    View,
-    ListItem,
-     Text, 
-     CheckBox,
-     Footer,
-     FooterTab,
-     CardItem,
-     Card,
-     Form,
-     Item,
-     Label,
-     Input
-     
- } from 'native-base';
+import {Container,Header,Content, Left, Right,Button,Icon,Body,Title,View,ListItem,Text, CheckBox,Footer,FooterTab,
+        CardItem,Card,Form,Item,Label,Input} from 'native-base';
+import {fetchUser} from '../actions/action';
 
 
-export default class SignUp extends Component{
+
+
+
+ class SignUp extends Component{
 
   constructor(props){
     super(props)
@@ -53,6 +37,11 @@ export default class SignUp extends Component{
     console.log(name)
     console.log(email)
     console.log(password)
+    this.props.dispatch(fetchUser(name,email,password));
+    this.props.navigator.push({
+      id:"loggedinapp",
+    })
+    
    
   }
    
@@ -112,6 +101,12 @@ export default class SignUp extends Component{
 }
 
 
+const mapStateToProps = (state) => ({
 
+});
+
+
+
+export default connect(mapStateToProps)(SignUp);
 
 

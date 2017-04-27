@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 
 const userSchema = mongoose.Schema({
-  Name: {type: String},
+  Name:  String,
   firstName: String,
   email: String,
   password: String,
-  googleId: {type: String},
+  googleId: String,
   googlePic: String,
   accessToken: String, 
 });
