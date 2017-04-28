@@ -39,7 +39,7 @@ export default class App extends Component{
 		       </View>
 		       <View style={styles.buttons} >
 				   <Button onPress={() => {this.signup()}} style={{ marginTop: -20,width:230 }} light rounded>
-                       <Text><Icon name='home'/>          Sign Up  </Text>
+                       <Text><Icon name='flask'/>          Sign Up  </Text>
                     </Button>
 
 		       </View>

@@ -1,17 +1,22 @@
 import {
- 
+ USER_DATA
 } from '../actions/action';
 
 const initialState = {
-    displayName: 'Sim --test from reducer'   
+    name: '',
+    email:'',   
 }
 
 export default (state = initialState, action) => {
-  switch(action.type) {
-   
-    default:
-        return state;
-  }
+	switch(action.type) {
+	   	case USER_DATA:
+			return Object.assign({}, state, {
+				name: action.name,
+				email: action.email
+			});
+	    default:
+	        return state;
+	}
 }
 
 

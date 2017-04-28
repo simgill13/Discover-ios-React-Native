@@ -10,6 +10,10 @@ import Login from './App/components/login';
 import SignUp from './App/components/signup';
 import LoggedInApp from './App/components/loggedInapp';
 import Search from './App/components/search';
+import CardImageExample from './App/components/results';
+import Fields from './App/components/fields';
+import Pickjob from './App/components/pickjob';
+import Job from './App/components/job';
 
 
 export default class iosAppProject extends Component{
@@ -28,6 +32,14 @@ export default class iosAppProject extends Component{
         return(<LoggedInApp navigator={navigator} title="loggedinapp"/>)
       case 'search':
         return(<Search navigator={navigator} title="search"/>)
+      case 'CardImageExample':
+        return(<CardImageExample navigator={navigator} title="CardImageExample"/>)
+      case 'fields':
+        return(<Fields navigator={navigator} title="fields"/>)
+      case 'pickjob':
+        return(<Pickjob navigator={navigator} title="pickjob"/>)
+      case 'job':
+        return(<Job navigator={navigator} title="job"/>)
     }
   }
   render(){

@@ -1,8 +1,9 @@
 export const USER_DATA = 'USER_DATA';
-export const userData = (displayName, googleId) => ({
+export const userData = (name,email,password) => ({
   type: USER_DATA,
-  displayName,
-  googleId
+  name,
+  email,
+  password
 })
 
 
@@ -30,13 +31,13 @@ export const fetchUser = (name,email,password) => dispatch => {
     		.then(json => {
     			console.log('I have posted this user')
       			console.log(json)
-      			// dispatch(userData(json.name,json.email,json.googleId,json.profilePicURL,json.accessToken,json.favoriteVacations))
+      			dispatch(userData(json.Name,json.email,json.password))
       		})
 	    }
       	else if (json !== null){
       		console.log(`User ${email} was found in the USER DB`)
       		console.log(json)
-      		// dispatch(userData(json.name,json.email,json.googleId,json.profilePicURL,json.accessToken,json.favoriteVacations))
+      	dispatch(userData(json.Name,json.email,json.password))
       	}
     })
 }

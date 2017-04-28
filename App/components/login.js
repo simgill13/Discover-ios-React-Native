@@ -29,7 +29,6 @@ export default class Login extends Component{
 
   constructor(props){
     super(props)
-    this.googleSignIn=this.googleSignIn.bind(this);
   }
 
   back(){
@@ -38,10 +37,7 @@ export default class Login extends Component{
       id:"app",
     })
   }
-   googleSignIn()  {
-   
-    Linking.openURL('http://localhost:8080/api/auth/google')
-  }
+  
     
 
   render(){
@@ -77,10 +73,6 @@ export default class Login extends Component{
             <Button block info>
               <Text>Log In </Text>
             </Button>
-            <Text>OR</Text>
-            <Button onPress={() => {this.googleSignIn()}}  block danger>
-              <Text>Sign in with Google</Text>
-            </Button> 
           </Content>
         </Container>
     </Container>

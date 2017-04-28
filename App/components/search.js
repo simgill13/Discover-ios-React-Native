@@ -1,29 +1,70 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import SocialLogin from 'react-social-login';
-import {StyleSheet,Linking,View,Text} from 'react-native';
-import { Button,Footer,FooterTab,Icon,Header,Item,Input } from 'native-base';
-var SearchBar = require('react-native-search-bar');
+import {StyleSheet,Linking,View,Text,Image} from 'react-native';
+import { Button,Footer,FooterTab,Icon,Header,Item,Input,InputGroup,Content,Card,Left,CardItem,Thumbnail,logo,Body,Container,Right } from 'native-base';
+import CardImageExample from './results';
 
 
 
-export default class Search extends Component{
+class Search extends Component{
 
   constructor(props){
     super(props)
-  }
+  
 
- 
- 
+  }
+  
+  begin(){
+    this.props.navigator.push({
+      id:"job",
+
+    })
+  
+}
 
   render(){
     return (
-      <View style={styles.pic}>
-      <SearchBar
-    ref='searchBar'
-    placeholder='Search'
-   
-    />
-      
+      <View style={styles.mainContainer}>
+       <Container>
+                <Header searchBar rounded>
+                    <Item>
+                        <Icon name="ios-search" />
+                        <Input placeholder="Search" />
+                        
+                    </Item>
+                    <Button transparent>
+                        <Text>Search</Text>
+                    </Button>
+                </Header>
+
+
+                  <Content>
+                    <Card>
+                        <CardItem>
+                          <Body>
+                            <Text>
+                                Arts and Humanities
+                            </Text>
+                            <Button onPress={() => {this.begin()}} transparent>
+                                <Text>select</Text>
+                            </Button>
+                          </Body>
+                        </CardItem>
+                    </Card>
+                </Content>
+
+
+
+
+
+
+
+
+
+            </Container>
+           
+
       </View>
     );
   }
@@ -31,12 +72,21 @@ export default class Search extends Component{
 
 const styles = StyleSheet.create({
 
-   pic:{
-  marginTop:30,
-  height:100,
-  width:380,
+  mainContainer:{
+    flex:1,
+    height:630,
+    width:380,
+    backgroundColor:'white'
+  },
  
- }
 
- 
 });
+const mapStateToProps = (state) => ({
+  name:state.name,
+  email:state.email,
+});
+
+
+
+export default connect(mapStateToProps)(Search);
+
