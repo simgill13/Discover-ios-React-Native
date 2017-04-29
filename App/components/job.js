@@ -33,7 +33,7 @@ class Job extends Component{
             </Button>
           </Left>
           <Body>
-            <Title>job</Title>
+            <Title>Art Director</Title>
           </Body>
           <Right>
              <Icon onPress={() => {this.begin()}} name='home' />
@@ -41,17 +41,22 @@ class Job extends Component{
         </Header> 
 
      
-
-<Expo.Video
-          source={{ uri: "https://youtu.be/oYAQ6p6brrY" }}
-          rate={1.0}
-         
-          volume={1.0}
-          muted={false}
-          resizeMode="cover"
-          repeat
-          style={{ width: 300, height: 300 }}
-        />
+        <View style={styles.container}>
+          <Expo.Video
+            source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+            rate={1.0}
+            volume={1.0}
+            muted={true}
+            resizeMode="cover"
+            repeat
+            style={{ width: 380, height: 300 }}
+          />
+        </View>
+        <Text style={styles.text}>
+        Art directors are responsible for the visual style and images in magazines,
+         newspapers, product packaging, and movie and television productions. 
+         They create the overall design of a project and direct others who develop artwork and layouts.
+        </Text>
 
       </View>
 
@@ -61,7 +66,16 @@ class Job extends Component{
 }
 
 const styles = StyleSheet.create({
-
+container: {
+    
+    alignItems: 'center',
+    justifyContent: 'center',
+   
+    backgroundColor: '#rgba(0,0,0,0.9)',
+  },
+  text:{
+    padding:20
+  }
 
 });
 const mapStateToProps = (state) => ({
